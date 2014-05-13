@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author      Tsvetan Stoychev <tsvetan.stoychev@jarlssen.de>
+ * @website     http://www.jarlssen.de
+ */
+-->
+<config>
+    <modules>
+        <Jarlssen_CustomCartValidation>
+            <version>0.0.1</version>
+        </Jarlssen_CustomCartValidation>
+    </modules>
+
+    <global>
+        <helpers>
+            <jarlssen_custom_cart_validation>
+                <class>Jarlssen_CustomCartValidation_Helper</class>
+            </jarlssen_custom_cart_validation>
+        </helpers>
+
+        <models>
+            <jarlssen_custom_cart_validation>
+                <class>Jarlssen_CustomCartValidation_Model</class>
+            </jarlssen_custom_cart_validation>
+        </models>
+
+        <events>
+            <sales_quote_item_qty_set_after>
+                <observers>
+                    <inventory>
+                        <class>jarlssen_custom_cart_validation/observer</class>
+                        <method>quoteItemValidations</method>
+                    </inventory>
+                </observers>
+            </sales_quote_item_qty_set_after>
+        </events>
+    </global>
+
+</config>
