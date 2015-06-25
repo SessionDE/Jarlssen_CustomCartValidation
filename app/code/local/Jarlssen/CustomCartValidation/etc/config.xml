@@ -28,10 +28,10 @@
         <events>
             <sales_quote_item_qty_set_after>
                 <observers>
-                    <inventory>
+                    <jarlssen_custom_cart_validation>
                         <class>jarlssen_custom_cart_validation/observer</class>
                         <method>quoteItemValidations</method>
-                    </inventory>
+                    </jarlssen_custom_cart_validation>
                 </observers>
             </sales_quote_item_qty_set_after>
         </events>
